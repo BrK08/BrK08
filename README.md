@@ -1,12 +1,12 @@
 <div align="center">
 
 <!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:1F6FEB,100:238636&height=220&section=header&text=H%C3%BCseyin%20Berk%20Balc%C4%B1&fontSize=55&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=Full-Stack%20Developer%20%7C%20Systems%20Engineer%20%7C%20Automation%20Architect&descSize=18&descAlignY=60" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:1F6FEB,100:238636&height=220&section=header&text=H%C3%BCseyin%20Berk%20Balc%C4%B1&fontSize=55&fontColor=FFFFFF&animation=fadeIn&fontFamily=Verdana" />
 
 <br>
 
 <!-- Typing Animation -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Building+aviation+tech+at+Take+Off+T%C3%BCrk;IT+Systems+Admin+%40+Treysan;TEKNOFEST+2026+%7C+OYSA+Project;Full-Stack+%7C+DevOps+%7C+Automation" alt="Typing Animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Building+aviation+tech+at+Take+Off+T%C3%BCrk;IT+Systems+Engineer;Full-Stack+Developer;YKS+Preparation" />
 
 <br><br>
 
@@ -19,6 +19,9 @@
 <!-- Social Links -->
 <a href="https://takeoffturk.com" target="_blank">
   <img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF4500?style=for-the-badge&logo=airplane&logoColor=white" />
+</a>
+<a href="https://www.berk.contact/" target="_blank">
+  <img src="https://img.shields.io/badge/Portfolio-berk.contact-6A5CFF?style=for-the-badge&logo=globe&logoColor=white" />
 </a>
 <a href="https://kocyatcilikinsaat.com" target="_blank">
   <img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Faat-2E8B57?style=for-the-badge&logo=building&logoColor=white" />
@@ -225,6 +228,9 @@ gantt
 
 <a href="https://takeoffturk.com" target="_blank">
   <img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF4500?style=for-the-badge&logo=airplane&logoColor=white" />
+</a>
+<a href="https://www.berk.contact/" target="_blank">
+  <img src="https://img.shields.io/badge/Portfolio-berk.contact-6A5CFF?style=for-the-badge&logo=globe&logoColor=white" />
 </a>
 <a href="https://kocyatcilikinsaat.com" target="_blank">
   <img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Faat-2E8B57?style=for-the-badge&logo=building&logoColor=white" />
