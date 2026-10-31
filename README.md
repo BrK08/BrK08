@@ -1,55 +1,55 @@
 <div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:1F6FEB,100:238636&height=220&section=header&text=H%C3%BCseyin%20Berk%20Balc%C4%B1&fontSize=55&fontColor=FFFFFF&animation=fadeIn" alt="Hüseyin Berk Balcı" />
+  <br>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Full-Stack+Developer;Systems+Engineer;IT+Administrator;Aviation+Tech+Builder;YKS+Preparation" alt="Typing banner" />
+  <br><br>
 
-<!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:1F6FEB,100:238636&height=220&section=header&text=H%C3%BCseyin%20Berk%20Balc%C4%B1&fontSize=55&fontColor=FFFFFF&animation=fadeIn&fontFamily=Verdana" />
+  <img src="https://img.shields.io/badge/Age-17%20years%20old-238636?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Location-Ankara%2C%20T%C3%BCrkiye-0A84FF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-YKS%20Preparation%20%F0%9F%93%9A-FF6B35?style=for-the-badge" />
+  <br><br>
 
-<br>
-
-<!-- Typing Animation -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Building+aviation+tech+at+Take+Off+T%C3%BCrk;IT+Systems+Engineer;Full-Stack+Developer;YKS+Preparation" />
-
-<br><br>
-
-<!-- Status Badges -->
-<img src="https://img.shields.io/badge/Age-17%20years%20old-238636?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Status-YKS%20Preparation%20%F0%9F%93%9A-FF6B35?style=for-the-badge" />
-
-<br><br>
-
-<!-- Social Links -->
-<a href="https://takeoffturk.com" target="_blank">
-  <img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF4500?style=for-the-badge&logo=airplane&logoColor=white" />
-</a>
-<a href="https://www.berk.contact/" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-berk.contact-6A5CFF?style=for-the-badge&logo=globe&logoColor=white" />
-</a>
-<a href="https://kocyatcilikinsaat.com" target="_blank">
-  <img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Faat-2E8B57?style=for-the-badge&logo=building&logoColor=white" />
-</a>
-
+  <a href="https://www.berk.contact/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-berk.contact-6A5CFF?style=for-the-badge&logo=globe&logoColor=white" alt="Portfolio" />
+  </a>
+  <a href="https://takeoffturk.com" target="_blank">
+    <img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF4500?style=for-the-badge&logo=airplane&logoColor=white" alt="Take Off Turk" />
+  </a>
+  <a href="https://kocyatcilikinsaat.com" target="_blank">
+    <img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Faat-2E8B57?style=for-the-badge&logo=building&logoColor=white" alt="Koç Yatçılık İnşaat" />
+  </a>
 </div>
 
 ---
 
-## About Me
-
-```
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <div align="center" style="background: linear-gradient(135deg, #0d1117, #161b22); border: 1px solid #30363d; border-radius: 18px; box-shadow: 0 10px 30px rgba(31, 111, 235, 0.28); padding: 24px; width: 820px;">
+          <h2>About Me</h2>
+          <pre style="color:#e6edf3; font-size: 15px; line-height: 1.7; background: rgba(255,255,255,0.02); border-radius: 12px; padding: 18px; border: 1px solid rgba(255,255,255,0.06);">
 +------------------------------------------------------------------+
-|  Huseyin Berk Balci -- 17 | Ankara, Turkiye                     |
+|  Hüseyin Berk Balcı -- 17 | Ankara, Türkiye                     |
 |                                                                  |
-|  [>] High School Graduate -> Currently Preparing for YKS        |
-|  [>] Full-Stack Developer & Systems Engineer                    |
-|  [>] IT Systems Administrator                                    |
+|  [>] High School Graduate -> Preparing for YKS                 |
+|  [>] Full-Stack Developer & Systems Engineer                  |
+|  [>] IT Systems Administrator                                  |
 |  [>] Founder & Developer @ Take Off Turk                        |
 |  [>] TEKNOFEST 2026 -- OYSA Project Lead                        |
 |                                                                  |
-|  "I don't just write code -- I architect systems that scale."   |
+|  "I don't just write code — I architect systems that scale."  |
 +------------------------------------------------------------------+
-```
+          </pre>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-## Tech Arsenal
+## 🚀 Tech Arsenal
 
 ### Languages
 <p>
@@ -63,7 +63,7 @@
   <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" />
 </p>
 
-### Web Development
+### Web & Backend
 <p>
   <img src="https://img.shields.io/badge/Google%20OAuth-4285F4?style=for-the-badge&logo=google&logoColor=white" />
   <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
@@ -81,15 +81,11 @@
   <img src="https://img.shields.io/badge/Printer%20Management-FF9500?style=for-the-badge&logo=printer&logoColor=white" />
 </p>
 
-### Automation & Scripting
+### Automation & Design
 <p>
   <img src="https://img.shields.io/badge/Custom%20Automation-00D4AA?style=for-the-badge&logo=robot&logoColor=white" />
   <img src="https://img.shields.io/badge/Multiboxing-9146FF?style=for-the-badge&logo=gamepad&logoColor=white" />
   <img src="https://img.shields.io/badge/Bot%20Development-FF0055?style=for-the-badge&logo=bot&logoColor=white" />
-</p>
-
-### Design & 3D
-<p>
   <img src="https://img.shields.io/badge/Spline%203D-FF6B9D?style=for-the-badge&logo=3d&logoColor=white" />
   <img src="https://img.shields.io/badge/Web%20Animations-FF61F6?style=for-the-badge&logo=animation&logoColor=white" />
   <img src="https://img.shields.io/badge/Digital%20Design-00C7B7?style=for-the-badge&logo=figma&logoColor=white" />
@@ -97,7 +93,7 @@
 
 ---
 
-## GitHub Stats
+## 📊 GitHub Stats
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=BrK08&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&custom_title=GitHub%20Activity" height="180" />
@@ -114,7 +110,7 @@
 
 ---
 
-## GitHub Trophies
+## 🏆 GitHub Trophies
 
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=BrK08&theme=algolia&no-frame=true&margin-w=15&margin-h=15&column=7" />
@@ -122,18 +118,18 @@
 
 ---
 
-## Featured Projects
+## ✨ Featured Projects
 
 <table>
   <tr>
     <td width="50%">
-      <h3 align="center">Take Off Turk</h3>
-      <div align="center">
+      <div align="center" style="background: linear-gradient(135deg, rgba(255, 94, 58, 0.15), rgba(255, 255, 255, 0.03)); border: 1px solid rgba(255, 94, 58, 0.35); border-radius: 18px; padding: 18px; box-shadow: 0 8px 24px rgba(255, 94, 58, 0.20);">
+        <h3>Take Off Turk</h3>
         <a href="https://takeoffturk.com" target="_blank">
           <img src="https://img.shields.io/badge/Website-takeoffturk.com-FF4500?style=flat-square&logo=airplane&logoColor=white" />
         </a>
         <br><br>
-        <p>Aviation news & portfolio website with Google OAuth integration and Supabase backend routing.</p>
+        <p>Aviation news, portfolio, and digital brand presence with Google OAuth and Supabase routing.</p>
         <p>
           <img src="https://img.shields.io/badge/Google%20OAuth-4285F4?style=flat-square&logo=google&logoColor=white" />
           <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
@@ -142,13 +138,13 @@
       </div>
     </td>
     <td width="50%">
-      <h3 align="center">Koc Yatcilik Insaat</h3>
-      <div align="center">
+      <div align="center" style="background: linear-gradient(135deg, rgba(46, 139, 87, 0.15), rgba(255,255,255,0.03)); border: 1px solid rgba(46, 139, 87, 0.35); border-radius: 18px; padding: 18px; box-shadow: 0 8px 24px rgba(46, 139, 87, 0.20);">
+        <h3>Koç Yatçılık İnşaat</h3>
         <a href="https://kocyatcilikinsaat.com" target="_blank">
           <img src="https://img.shields.io/badge/Website-kocyatcilikinsaat.com-2E8B57?style=flat-square&logo=building&logoColor=white" />
         </a>
         <br><br>
-        <p>Construction company web project with full development lifecycle management.</p>
+        <p>Construction company website built for business growth, branding, and digital trust.</p>
         <p>
           <img src="https://img.shields.io/badge/Web%20Dev-FF6D00?style=flat-square&logo=html5&logoColor=white" />
           <img src="https://img.shields.io/badge/Project%20Mgmt-0078D4?style=flat-square&logo=azure-devops&logoColor=white" />
@@ -158,12 +154,12 @@
   </tr>
   <tr>
     <td width="50%">
-      <h3 align="center">OYSA - Autonomous Fire Vehicle</h3>
-      <div align="center">
+      <div align="center" style="background: linear-gradient(135deg, rgba(255, 0, 0, 0.12), rgba(255,255,255,0.03)); border: 1px solid rgba(255, 0, 0, 0.35); border-radius: 18px; padding: 18px; box-shadow: 0 8px 24px rgba(255, 0, 0, 0.18);">
+        <h3>OYSA - Autonomous Fire Vehicle</h3>
         <img src="https://img.shields.io/badge/TEKNOFEST%202026-FF0000?style=flat-square&logo=fire&logoColor=white" />
         <br><br>
-        <p><strong>Otonom Yangin Sondurme Araci</strong></p>
-        <p>Autonomous Fire Extinguishing Vehicle for TEKNOFEST 2026 "Technology for Humanity" competition. Project design & process management.</p>
+        <p><strong>Otonom Yangın Söndürme Aracı</strong></p>
+        <p>Autonomous fire extinguishing vehicle project for TEKNOFEST 2026.</p>
         <p>
           <img src="https://img.shields.io/badge/Autonomous-00D4AA?style=flat-square&logo=robot&logoColor=white" />
           <img src="https://img.shields.io/badge/IoT-FF6B35?style=flat-square&logo=arduino&logoColor=white" />
@@ -172,15 +168,15 @@
       </div>
     </td>
     <td width="50%">
-      <h3 align="center">Treysan - IT Internship</h3>
-      <div align="center">
+      <div align="center" style="background: linear-gradient(135deg, rgba(0, 120, 212, 0.12), rgba(255,255,255,0.03)); border: 1px solid rgba(0, 120, 212, 0.35); border-radius: 18px; padding: 18px; box-shadow: 0 8px 24px rgba(0, 120, 212, 0.20);">
+        <h3>Treysan - IT Internship</h3>
         <img src="https://img.shields.io/badge/IT%20Internship-0078D4?style=flat-square&logo=microsoft&logoColor=white" />
         <br><br>
-        <p>Active systems administration experience at IT department:</p>
+        <p>Hands-on systems administration experience in IT operations.</p>
         <ul align="left">
-          <li>Hardware troubleshooting & repairs</li>
-          <li>Server & network problem resolution</li>
-          <li>Active Directory domain user profile management</li>
+          <li>Hardware troubleshooting & repair</li>
+          <li>Server & network issue resolution</li>
+          <li>Active Directory profile management</li>
           <li>OS deployment & configuration</li>
         </ul>
       </div>
@@ -190,7 +186,7 @@
 
 ---
 
-## Experience Timeline
+## 🧭 Experience Timeline
 
 ```mermaid
 gantt
@@ -198,7 +194,7 @@ gantt
     dateFormat YYYY-MM
     section Web Development
     Take Off Turk          :active, 2024-01, 2026-12
-    Koc Yatcilik Insaat    :active, 2024-06, 2025-12
+    Koç Yatçılık İnşaat    :active, 2024-06, 2025-12
     section Systems & IT
     Treysan IT Internship  :active, 2025-01, 2026-07
     section Competitions
@@ -207,7 +203,7 @@ gantt
 
 ---
 
-## Current Focus
+## 🎯 Current Focus
 
 <div align="center">
 
@@ -222,38 +218,28 @@ gantt
 
 ---
 
-## Connect With Me
+## 🌐 Connect With Me
 
 <div align="center">
-
-<a href="https://takeoffturk.com" target="_blank">
-  <img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF4500?style=for-the-badge&logo=airplane&logoColor=white" />
-</a>
-<a href="https://www.berk.contact/" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-berk.contact-6A5CFF?style=for-the-badge&logo=globe&logoColor=white" />
-</a>
-<a href="https://kocyatcilikinsaat.com" target="_blank">
-  <img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Faat-2E8B57?style=for-the-badge&logo=building&logoColor=white" />
-</a>
-
-<br><br>
-
-<!-- Profile Views Counter -->
-<img src="https://komarev.com/ghpvc/?username=BrK08&color=1F6FEB&style=for-the-badge&label=Profile+Views" />
-
+  <a href="https://www.berk.contact/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-berk.contact-6A5CFF?style=for-the-badge&logo=globe&logoColor=white" />
+  </a>
+  <a href="https://takeoffturk.com" target="_blank">
+    <img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF4500?style=for-the-badge&logo=airplane&logoColor=white" />
+  </a>
+  <a href="https://kocyatcilikinsaat.com" target="_blank">
+    <img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Faat-2E8B57?style=for-the-badge&logo=building&logoColor=white" />
+  </a>
+  <br><br>
+  <img src="https://komarev.com/ghpvc/?username=BrK08&color=1F6FEB&style=for-the-badge&label=Profile+Views" />
 </div>
 
 ---
 
 <div align="center">
-
-<!-- Animated Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:238636,50:1F6FEB,100:0D1117&height=150&section=footer&text=Thanks%20for%20visiting!&fontSize=30&fontColor=FFFFFF&animation=fadeIn" />
-
-<br>
-
-> *"The best way to predict the future is to create it."* -- Peter Drucker
-
-**Made with love by Huseyin Berk Balci**
-
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:238636,50:1F6FEB,100:0D1117&height=150&section=footer&text=Thanks%20for%20visiting!&fontSize=30&fontColor=FFFFFF&animation=fadeIn" />
+  <br>
+  > *"The best way to predict the future is to create it."* — Peter Drucker
+  <br><br>
+  <strong>Made with love by Hüseyin Berk Balcı</strong>
 </div>
