@@ -1,136 +1,56 @@
-# 🚀 Aurora 3D Profile — Kurulum Rehberi
+# BrK08 — Space 3D Profil Paketi 🚀
 
-GitHub profilin için tasarlanmış **gerçek 3D görünüm** (izometrik küpler, SMIL
-animasyonları, cam paneller, aurora gökyüzü) içeren hazır paket.
-Bu rehberi izleyerek **5 dakikada** yayına alabilirsin.
+GitHub profil README'inin tamamı **özgün SVG varlıklardan** oluşuyor: süper kütleli
+karadelik, halkalı gezegenler, takımyıldızlar, HUD cam paneller, SMIL animasyonları.
+JavaScript yok, iframe yok — GitHub'ın camo proxy'si üzerinden sorunsuz çalışır.
 
----
+## Dosyalar
 
-## 📦 Paket İçeriği
-
-| Dosya / Klasör | Ne işe yarar? |
+| Yol | Açıklama |
 |---|---|
-| `README.md` | Yeni 3D profil sayfan — GitHub'da otomatik görünür |
-| `assets/` | Tüm 3D SVG çizimler (21 adet, hepsi animasyonlu) |
-| `assets/snake.svg` | İlk kurulumda "placeholder" görünür; ilk workflow çalışmasından sonra canlı katkı grafiğine dönüşür |
-| `assets/live_stats_3d.svg` | Canlı telemetri paneli (repo, follower, yıldız, commit sayıları + dil grafiği). İlk kurulumda "boot" çerçevesi görünür; Aurora Autopilot çalışınca gerçek verilerle yeniden çizilir |
-| `assets/trophies_3d.svg` | 3D kupa dolabı — Take Off Türk, TEKNOFEST 2026, Treysan, "17 & Shipping" |
-| `.github/workflows/aurora-autopilot.yml` | Her gün yılanı VE telemetri panelini otomatik yenileyen GitHub Action |
-| `.github/scripts/gen_snake.py` | 3D katkı yılanını GitHub GraphQL API'den aldığı **gerçek** verilerle çizen betik (saf Python, ek kurulum gerekmez) |
-| `.github/scripts/live_stats.py` | Telemetri panelini GitHub API'den aldığı **gerçek** verilerle çizen betik (saf Python, ek kurulum gerekmez) |
-| `preview.html` | Push etmeden önce yerelde GitHub görünümünü test etmeni sağlar |
-| `SETUP.md` | Bu rehber (repoya yüklemek zorunda değilsin) |
+| `README.md` | Profil sayfası (uzay temalı, 1012px ölçekli tipografi) |
+| `assets/*.svg` | 21 adet animasyonlu SVG varlık (hero, bantlar, karadelik, paneller…) |
+| `.github/workflows/space-autopilot.yml` | Günlük otomatik yenileme (Actions) |
+| `.github/scripts/gen_snake.py` | Katkı grafiğini "Contribution Constellation"a çevirir |
+| `.github/scripts/live_stats.py` | Canlı telemetri panelini API'den üretir |
+| `preview.html` | Tarayıcıda yerel önizleme |
 
----
+## Kurulum
 
-## ⚡ Hızlı Kurulum (Git ile — önerilen)
+1. `BrK08/BrK08` adlı **public** profil reposunun olduğundan emin ol.
+2. Paket içeriğini reponun **ana dizinine** kopyala (mevcut dosyaların üzerine):
+   `README.md`, `assets/`, `.github/`.
+3. Commit + push. Birkaç saniye içinde `github.com/BrK08` adresinde görünür.
 
-> Profil README'i sadece **kullanıcı adınla birebir aynı addaki** özel repoda
-> (`BrK08/BrK08`) görünür. Repon zaten varsa bu adımı atla.
+## Canlı veri — Space Autopilot ⚡
 
-1. **Depoyu klonla**
-   ```bash
-   git clone https://github.com/BrK08/BrK08.git
-   cd BrK08
-   ```
+`space-autopilot.yml` her gün **02:00 UTC (05:00 İstanbul)** çalışır:
 
-2. **Eski README'ni yedekle** (istemiyorsan atla)
-   ```bash
-   cp README.md README.yedek.md
-   ```
+- `assets/snake.svg` → son 365 günün gerçek katkı grafiği (GraphQL API)
+- `assets/live_stats_3d.svg` → repo / takipçi / yıldız / commit + dil dağılımı (REST API)
 
-3. **Zip'i aç ve dosyaları kopyala**
-   Zip içindeki `README.md`, `assets/`, `.github/`, `preview.html` dosyalarını
-   klonladığın klasörün içine kopyala (üzerine yaz).
+Bot değişiklik varsa otomatik commit eder. Elle tetiklemek için:
+**Actions → Space Autopilot → Run workflow**. Gerekli tek izin `contents: write`
+(workflow içinde tanımlı, ekstra secret gerekmez).
 
-4. **Commit'le ve gönder**
-   ```bash
-   git add -A
-   git commit -m "feat: Aurora 3D profile ✨"
-   git push
-   ```
+> İlk push'tan sonra panelde "..." görürsen endişelenme — workflow ilk çalışmasında
+> gerçek sayılarla doldurur. İstersen Actions'tan bir kez elle çalıştır.
 
-5. **Aurora Autopilot'u çalıştır (bir kez)** — yılan + telemetri paneli canlansın:
-   - GitHub → **BrK08/BrK08** → **Actions** sekmesi
-   - Sol listeden **Aurora Autopilot** → **Run workflow** → yeşil **Run** butonu
-   - ~1 dakika sonra `assets/snake.svg` ve `assets/live_stats_3d.svg` gerçek
-     verilerinle otomatik yenilenir ve profilinde görünür.
+## Özelleştirme
 
-Bitti! → **github.com/BrK08** sayfanı yenile. 🎉
+- **Renk paleti:** `space_lib.py` (statik varlıklar) ve `.github/scripts/*.py`
+  (otomatik paneller) başındaki sabitlerden değiştir.
+- **Varlıkları yeniden üretmek:** `python3 gen_space_a.py`, `gen_space_b.py`,
+  `gen_space_c.py` (çıktı: `build/assets/`).
+- **Bölüm metinleri:** `gen_space_a.py` içindeki `SECTIONS` listesi.
 
----
+## SSS
 
-## 🖥️ Git Yok mu? (Web Arayüzü ile)
+**Fontlar neden SVG içinde gömülü değil?** GitHub resimleri proxy'ler; dış font
+yüklenemez. Bu yüzden sistem font yığınları (Segoe UI, Cascadia/Consolas) kullanılır —
+her cihazda tutarlı görünür.
 
-1. **github.com/BrK08/BrK08** reposunu aç.
-2. Zip'i bilgisayarında **aynı klasör yapısıyla** çıkart.
-3. Sitede **Add file → Upload files** ile `assets` klasöründeki tüm SVG'leri sürükle
-   (klasörü sürüklersen `assets/` yolu korunur).
-4. `.github/workflows/aurora-autopilot.yml` için: repo kökünde **Add file → Create new file**,
-   dosya adına `.github/workflows/aurora-autopilot.yml` yaz, zip'teki içeriği yapıştır.
-   Aynı şekilde `.github/scripts/live_stats.py` dosyasını da oluştur ve zip'teki
-   betiğin içeriğini yapıştır. Commit'le.
-5. `README.md`'yi kalem (✏️) ikonuyla aç, zip'teki yeni `README.md` içeriğinin
-   tamamını yapıştır, commit'le.
+**Yazılar küçük mü geldi?** Artık değil: tüm tuval 1012px = GitHub'ın render
+genişliği; %100 ölçekli çizilir, küçültme yok.
 
----
-
-## 🔄 Aurora Autopilot Nasıl Çalışır?
-
-- Workflow **her gün 05:00 Türkiye saati** (02:00 UTC) otomatik çalışır:
-  1. `.github/scripts/gen_snake.py` betiği GitHub GraphQL API'den **gerçek** katkı
-     takvimini çeker ve `assets/snake.svg` dosyasını Aurora stilinde yeniden üretir.
-  2. `.github/scripts/live_stats.py` betiği GitHub API'den **gerçek** verileri çeker
-     (repo sayısı, follower, yıldız, son 12 ayın commit sayısı, dil dağılımı) ve
-     `assets/live_stats_3d.svg` panelini Aurora stilinde yeniden çizer.
-  3. İki dosya tek commit ile repoya eklenir.
-- İstediğin an elle de çalıştırabilirsin: **Actions → Aurora Autopilot → Run workflow**.
-- Bir gün güncellenmezse repo ayarlarında Actions'ın açık olduğundan emin ol:
-  **Settings → Actions → General → Actions permissions → Allow all actions and reusable workflows**.
-- Workflow repoya yazma yetkisi olan default token'ı kullanır (`secrets.GITHUB_TOKEN`);
-  **ekstra bir secret tanımlamana gerek yok**.
-
-### 💡 Neden bu yaklaşım "ilk" seviyede?
-Popüler istatistik kartları (github-readme-stats, trophy, activity graph) ve
-yılan görselleri genelde **üçüncü parti servis/aksiyonlara** bağımlıdır ve sık sık
-**çöker veya kapanır** — o zaman profilinde kırık resimler kalır. Bu pakette yılan
-VE telemetri **tamamen kendi reponun içinde** üretilir: dış servisler kapalı olsa
-bile panelin **her gün** çalışır ve asla kırılmaz.
-
----
-
-## 🛠️ Sık Sorulanlar
-
-**SVG'ler profilimde görünmüyor.**
-→ Dosya yolları `assets/....svg` şeklinde relative olmalı, repon adı kullanıcı
-adınla birebir aynı olmalı (`BrK08/BrK08`) ve repo **public** olmalı.
-
-**Yılan veya telemetri sayıları neden güncellenmiyor?**
-→ Panel ve yılan, workflow her çalıştığında yeniden çizilir. Elle güncellemek
-için: **Actions → Aurora Autopilot → Run workflow**. Actions hiç çalışmıyorsa
-GitHub hesabında **faturalandırma kilidi** olabilir (ödeme sorunu Actions'ı da
-kilitler): **Settings → Billing and plans**'ten ödeme yöntemini kontrol et.
-Ayrıca repoda Actions'ın açık olduğundan emin ol.
-
-**Animasyonlar neden GitHub'da çalışıyor?**
-→ Tüm animasyonlar SVG'nin yerleşik standardı olan **SMIL** ile yapıldı
-(hareketli küpler, yıldızlar, akan ışık şeritleri, kupa parlamaları). JavaScript/iframe
-gerekmez, GitHub'ın resim proxy'si (camo) SMIL'i sorunsuz geçirir.
-
-**Metin/renk nasıl değiştirilir?**
-→ En kolay yol: ilgili SVG dosyasını bir metin editöründe aç, değiştirmek
-istediğin yazıyı ara ve düz metin olarak değiştir (ör. `YKS PREPARATION`).
-Renk paleti: `#7C5CFF` mor, `#4F7CFF` mavi, `#38BDF8` cyan, `#2DD4BF` turkuaz,
-`#34D399` yeşil.
-
-**Yerelde nasıl önizlerim?**
-→ Zip'i açtığın klasörde `preview.html` dosyasına çift tıkla — GitHub'daki
-görünümü birebir simüle eder (internet bağlantısı ile dış servisler de görünür).
-
-**Eski haline dönebilir miyim?**
-→ Evet. Push öncesi yedeklediğin `README.yedek.md`'yi geri yükle ya da GitHub'da
-commit geçmişinden (History) önceki sürümü geri yükle (revert/restore).
-
----
-
-Hazırlanma: Kasım 2026 · Tasarım: Aurora 3D · Sahibi: Hüseyin Berk Balcı
+**Eski Aurora temalı dosyalar?** Git geçmişinde duruyor; yeni tema ile değiştirildi.

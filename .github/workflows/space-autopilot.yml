@@ -1,9 +1,9 @@
-name: Aurora Autopilot
+name: Space Autopilot
 
 # Daily regeneration for the profile's live 3D assets — 100% self-hosted:
-#   1. assets/snake.svg         — 3D contribution snake rendered by
+#   1. assets/snake.svg         — contribution constellation rendered by
 #      .github/scripts/gen_snake.py from the real GitHub GraphQL API
-#   2. assets/live_stats_3d.svg — telemetry panel rendered by
+#   2. assets/live_stats_3d.svg — deep-space telemetry rendered by
 #      .github/scripts/live_stats.py from the real GitHub REST API
 # No third-party widget service, no third-party action.
 # Runs at 02:00 UTC (05:00 Istanbul) and on demand.
@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: aurora-autopilot
+  group: space-autopilot
   cancel-in-progress: true
 
 jobs:
@@ -28,13 +28,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate 3D contribution snake
+      - name: Generate contribution constellation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
         run: python3 .github/scripts/gen_snake.py assets/snake.svg
 
-      - name: Render live telemetry panel
+      - name: Render deep-space telemetry panel
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
@@ -48,6 +48,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes."
           else
-            git commit -m "chore: regenerate 3D snake + live telemetry [skip ci]"
+            git commit -m "chore: regenerate constellation + telemetry [skip ci]"
             git push
           fi

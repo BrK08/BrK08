@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Aurora 3D — Self-hosted contribution snake generator.
+"""Space 3D — Self-hosted contribution constellation generator.
 
-Runs inside the Aurora Autopilot GitHub Actions workflow (or locally with a
+Runs inside the Space Autopilot GitHub Actions workflow (or locally with a
 token). Fetches the REAL contribution calendar from the GitHub GraphQL API
-and renders assets/snake.svg in the Aurora 3D style: extruded contribution
-cells, a gradient snake weaving through the active days with SMIL motion.
+and renders assets/snake.svg in the Space 3D style: extruded contribution
+cells as glowing stars, a nebula-gradient snake weaving through the active
+days with SMIL motion.
 
 Pure stdlib (urllib + json). Exits non-zero on API failure so the workflow
 never commits a blank or wrong panel.
@@ -15,15 +16,16 @@ import os
 import sys
 import urllib.request
 
-# ---------------- palette ----------------
-VIOLET = '#7C5CFF'; CYAN = '#38BDF8'; AQUA = '#2DD4BF'; EMERALD = '#34D399'
-GREEN_OK = '#4ADE9B'; PINK = '#F472B6'; AMBER = '#FFB454'
-TXT = '#E6ECFF'; SUB = '#9FB0D9'; FAINT = '#7484AD'
+# ---------------- palette (Space design system) ----------------
+VIOLET = '#8B5CF6'; CYAN = '#22D3EE'; ICE = '#7DD3FC'; AQUA = '#2DD4BF'
+MAGENTA = '#FF3D9A'; PINK = '#F472B6'; GOLD = '#FBBF24'; GREEN_OK = '#4ADE9B'
+TXT = '#EEF2FF'; SUB = '#A6B4D8'; FAINT = '#7E8BB3'
 SANS = "Segoe UI, -apple-system, 'Helvetica Neue', Arial, sans-serif"
 MONO = "'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace"
-W = 1170
+W = 1012
+H = 396
 
-LADDER = ['#2A3A6E', '#3D5AA8', '#4F7CFF', '#7C5CFF']  # intensity levels
+LADDER = ['#2B3168', '#4C4FC4', '#8B5CF6', '#FF3D9A']  # intensity levels
 
 _uid = [0]
 
@@ -50,17 +52,17 @@ def lighten(hexc, t):
     return '#%02X%02X%02X' % tuple(round(v + (255 - v) * t) for v in r)
 
 
-def aurora_grad(gid):
+def nebula_grad(gid):
     return (f'<linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="0">'
-            f'<stop offset="0" stop-color="#A78BFA"/>'
-            f'<stop offset="0.28" stop-color="#7C5CFF"/>'
-            f'<stop offset="0.55" stop-color="#38BDF8"/>'
-            f'<stop offset="0.8" stop-color="#2DD4BF"/>'
-            f'<stop offset="1" stop-color="#34D399"/></linearGradient>')
+            f'<stop offset="0" stop-color="{ICE}"/>'
+            f'<stop offset="0.32" stop-color="{CYAN}"/>'
+            f'<stop offset="0.62" stop-color="{VIOLET}"/>'
+            f'<stop offset="1" stop-color="{MAGENTA}"/></linearGradient>')
 
 
 def T(x, y, s, fs=16, fill=TXT, w=400, anchor='start', ls=None, font=SANS):
-    a = f'x="{x}" y="{y}" font-family="{font}" font-size="{fs}" font-weight="{w}" fill="{fill}"'
+    a = (f'x="{x}" y="{y}" font-family="{font}" font-size="{fs}" '
+         f'font-weight="{w}" fill="{fill}"')
     if anchor != 'start':
         a += f' text-anchor="{anchor}"'
     if ls is not None:
@@ -70,7 +72,7 @@ def T(x, y, s, fs=16, fill=TXT, w=400, anchor='start', ls=None, font=SANS):
 
 def grad_text(defs, x, y, s, fs, w=800, anchor='middle', glow_color=None):
     gt = uid('gt')
-    defs += aurora_grad(gt)
+    defs += nebula_grad(gt)
     gf = ''
     if glow_color:
         gf = uid('gf')
@@ -87,17 +89,25 @@ def grad_text(defs, x, y, s, fs, w=800, anchor='middle', glow_color=None):
     return defs, m
 
 
-def chip(defs, x, y, label, value, color, fs=12):
-    wdt = len(label) * fs * 0.62 + len(str(value)) * fs * 0.68 + 40
-    m = (f'<rect x="{x}" y="{y}" width="{wdt:.0f}" height="26" rx="13" '
+def chip(defs, x, y, label, value, color, fs=13):
+    wdt = len(label) * fs * 0.62 + len(str(value)) * fs * 0.68 + 42
+    m = (f'<rect x="{x:.0f}" y="{y}" width="{wdt:.0f}" height="29" rx="14.5" '
          f'fill="{rgba(color, 0.13)}" stroke="{rgba(color, 0.55)}" stroke-width="1"/>'
-         f'<circle cx="{x + 14}" cy="{y + 13}" r="3" fill="{color}">'
+         f'<circle cx="{x + 15:.0f}" cy="{y + 14.5}" r="3.2" fill="{color}">'
          f'<animate attributeName="opacity" values="0.35;1;0.35" dur="2.2s" '
          f'repeatCount="indefinite"/></circle>'
-         + T(x + 24, y + 17.5, label, fs=fs, fill=SUB, font=MONO, w=600)
-         + T(x + 24 + len(label) * fs * 0.62 + 9, y + 17.5, str(value),
+         + T(x + 26, y + 19.5, label, fs=fs, fill=SUB, font=MONO, w=600)
+         + T(x + 26 + len(label) * fs * 0.62 + 10, y + 19.5, str(value),
              fs=fs, fill=lighten(color, 0.35), font=MONO, w=700))
     return defs, m, wdt
+
+
+def hud_corners(x, y, w, h, c, L=13):
+    st = f'stroke="{rgba(c, 0.8)}" stroke-width="2" fill="none" stroke-linecap="round"'
+    return (f'<path d="M{x},{y + L} V{y} H{x + L}" {st}/>'
+            f'<path d="M{x + w - L},{y} H{x + w} V{y + L}" {st}/>'
+            f'<path d="M{x},{y + h - L} V{y + h} H{x + L}" {st}/>'
+            f'<path d="M{x + w - L},{y + h} H{x + w} V{y + h - L}" {st}/>')
 
 
 # ---------------- data ----------------
@@ -110,7 +120,7 @@ def fetch_calendar(owner, token):
                                  headers={
                                      'Authorization': f'Bearer {token}',
                                      'Content-Type': 'application/json',
-                                     'User-Agent': 'aurora-autopilot',
+                                     'User-Agent': 'space-autopilot',
                                  })
     with urllib.request.urlopen(req, timeout=30) as r:
         data = json.loads(r.read().decode())
@@ -131,32 +141,32 @@ def level(count):
 
 # ---------------- render ----------------
 def render(total, days, date_str):
-    # grid geometry: 53 weeks x 7 days, cell pitch 19
-    GX, GY = 82, 118
-    PITCH, CS = 19, 16.5
-    ncol = max(len(days) // 7, 1)
+    # grid geometry: 53 weeks x 7 days
+    GX, GY = 56, 128
+    PITCH, CS = 16.4, 13.6
     defs = (f'<filter id="softShadow" x="-40%" y="-40%" width="180%" '
             f'height="180%"><feGaussianBlur stdDeviation="10"/></filter>')
     body = ''
 
     # glass panel
-    px, py, pw, ph = 40, 26, 1090, 320
+    px, py, pw, ph = 30, 26, 952, 344
     pg = uid('pg')
     defs += (f'<linearGradient id="{pg}" x1="0" y1="0" x2="0" y2="1">'
-             f'<stop offset="0" stop-color="#0A1028" stop-opacity="0.94"/>'
-             f'<stop offset="1" stop-color="#080C1E" stop-opacity="0.96"/>'
+             f'<stop offset="0" stop-color="#0A0E28" stop-opacity="0.94"/>'
+             f'<stop offset="1" stop-color="#080B20" stop-opacity="0.96"/>'
              f'</linearGradient>')
     body += (f'<rect x="{px}" y="{py + 10}" width="{pw}" height="{ph}" rx="20" '
-             f'fill="rgba(5,6,15,0.55)" filter="url(#softShadow)"/>'
+             f'fill="rgba(4,2,18,0.55)" filter="url(#softShadow)"/>'
              f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="20" '
-             f'fill="url(#{pg})" stroke="{rgba(AQUA, 0.5)}" stroke-width="1.4"/>'
+             f'fill="url(#{pg})" stroke="{rgba(MAGENTA, 0.5)}" stroke-width="1.4"/>'
              f'<rect x="{px}" y="{py}" width="{pw}" height="4" rx="2" '
-             f'fill="{rgba(AQUA, 0.8)}"/>')
+             f'fill="{rgba(MAGENTA, 0.8)}"/>'
+             + hud_corners(px + 10, py + 10, pw - 20, ph - 20, MAGENTA, 13))
 
-    # aurora blobs
+    # nebulae
     for cx, cy, rx, ry, col, op, dx, dy, dur, beg in [
-            (-40, 90, 300, 120, AQUA, 0.16, 26, 8, 12, 0),
-            (1210, 250, 280, 110, VIOLET, 0.18, -26, 6, 13, 2)]:
+            (-40, 100, 300, 120, MAGENTA, 0.13, 26, 8, 12, 0),
+            (1050, 300, 280, 110, VIOLET, 0.15, -26, 6, 13, 2)]:
         bg = uid('bl')
         defs += (f'<radialGradient id="{bg}" cx="0.5" cy="0.5" r="0.5">'
                  f'<stop offset="0" stop-color="{col}" stop-opacity="{op}"/>'
@@ -170,20 +180,19 @@ def render(total, days, date_str):
                  f'keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/></ellipse>')
 
     # title
-    defs, m = grad_text(defs, W / 2, 74, '3D CONTRIBUTION SNAKE', 27, w=800,
-                        anchor='middle', glow_color=AQUA)
+    defs, m = grad_text(defs, W / 2, 78, 'CONTRIBUTION CONSTELLATION', 30,
+                        w=800, anchor='middle', glow_color=MAGENTA)
     body += m
     active = [d for d in days if d['contributionCount'] > 0]
-    body += (f'<circle cx="{W / 2 + 238}" cy="66" r="4.5" fill="{GREEN_OK}">'
+    body += (f'<circle cx="{W / 2 + 266}" cy="70" r="5" fill="{GREEN_OK}">'
              f'<animate attributeName="opacity" values="0.35;1;0.35" dur="1.6s" '
              f'repeatCount="indefinite"/></circle>'
-             + T(W / 2 + 250, 70, 'LIVE DATA', fs=10.5, fill=GREEN_OK,
-                 font=MONO, w=700, ls=1.4))
-    body += T(W / 2, 99, f'last 365 days — regenerated daily by Aurora Autopilot '
-             f'({date_str})', fs=11.5, fill=FAINT, anchor='middle', font=MONO)
+             + T(W / 2 + 280, 75, 'LIVE DATA', fs=12.5, fill=GREEN_OK,
+                 font=MONO, w=700, ls=1.6))
+    body += T(W / 2, 104, f'last 365 days — regenerated daily by Space Autopilot '
+             f'({date_str})', fs=12.5, fill=FAINT, anchor='middle', font=MONO)
 
     # ---- contribution cells ----
-    # active dates set for streaks
     adates = sorted(d['date'] for d in active)
     longest = cur = 1 if adates else 0
     for i in range(1, len(adates)):
@@ -192,21 +201,20 @@ def render(total, days, date_str):
         cur = cur + 1 if adates[i] == prev else 1
         longest = max(longest, cur)
 
-    cells = {}          # (col,row) -> dict
+    cells = {}
     for i, d in enumerate(days):
         col, row = i // 7, i % 7
         cells[(col, row)] = d
-    ncol = max(i // 7 for i in range(len(days))) + 1
 
     # base faint cells
     body += '<g>'
     for (col, row), d in sorted(cells.items()):
         x, y = GX + col * PITCH, GY + row * PITCH
         body += (f'<rect x="{x:.1f}" y="{y:.1f}" width="{CS}" height="{CS}" '
-                 f'rx="3.2" fill="rgba(255,255,255,0.045)"/>')
+                 f'rx="3" fill="rgba(255,255,255,0.045)"/>')
     body += '</g>'
 
-    # active cells with 3D extrusion + glow
+    # active cells with 3D extrusion + glow (glowing stars)
     for (col, row), d in sorted(cells.items()):
         c = d['contributionCount']
         if c <= 0:
@@ -214,26 +222,23 @@ def render(total, days, date_str):
         x, y = GX + col * PITCH, GY + row * PITCH
         lv = level(c)
         colr = LADDER[lv - 1]
-        # drop shadow (extrusion)
         body += (f'<rect x="{x + 2:.1f}" y="{y + 2:.1f}" width="{CS}" '
-                 f'height="{CS}" rx="3.2" fill="rgba(3,4,13,0.55)"/>')
-        # glow for strong cells
+                 f'height="{CS}" rx="3" fill="rgba(3,2,15,0.55)"/>')
         if lv >= 3:
             gl = uid('gl')
             defs += (f'<radialGradient id="{gl}" cx="0.5" cy="0.5" r="0.5">'
                      f'<stop offset="0" stop-color="{colr}" '
-                     f'stop-opacity="{0.55 if lv == 4 else 0.3}"/>'
+                     f'stop-opacity="{0.6 if lv == 4 else 0.32}"/>'
                      f'<stop offset="1" stop-color="{colr}" '
                      f'stop-opacity="0"/></radialGradient>')
             body += (f'<ellipse cx="{x + CS / 2:.1f}" cy="{y + CS / 2:.1f}" '
-                     f'rx="{CS * 0.95}" ry="{CS * 0.95}" fill="url(#{gl})">'
+                     f'rx="{CS * 0.95:.1f}" ry="{CS * 0.95:.1f}" fill="url(#{gl})">'
                      f'<animate attributeName="opacity" values="0.6;1;0.6" '
                      f'dur="{2.4 + (col % 5) * 0.3}s" '
                      f'begin="{(col * 0.11):.2f}s" repeatCount="indefinite"/>'
                      f'</ellipse>')
-        # cell
         body += (f'<rect x="{x:.1f}" y="{y:.1f}" width="{CS}" height="{CS}" '
-                 f'rx="3.2" fill="{colr}" '
+                 f'rx="3" fill="{colr}" '
                  f'stroke="{rgba("#FFFFFF", 0.22)}" stroke-width="0.7">'
                  f'<animate attributeName="opacity" values="0.82;1;0.82" '
                  f'dur="{3.2 + (row % 4) * 0.4}s" '
@@ -259,30 +264,30 @@ def render(total, days, date_str):
         pts = [(cx0(c), cy0(r)) for c, r in path]
         dstr = (f'M{pts[0][0]:.1f},{pts[0][1]:.1f}'
                 + ''.join(f' L{x:.1f},{y:.1f}' for x, y in pts[1:]))
-        # body: soft halo
+        # halo
         body += (f'<path d="{dstr}" fill="none" stroke="{rgba(CYAN, 0.20)}" '
-                 f'stroke-width="11" stroke-linecap="round" '
+                 f'stroke-width="10" stroke-linecap="round" '
                  f'stroke-linejoin="round"/>')
-        # body: aurora gradient flowing dashes
+        # nebula-gradient flowing dashes
         sg = uid('sg')
-        defs += aurora_grad(sg)
+        defs += nebula_grad(sg)
         body += (f'<path d="{dstr}" fill="none" stroke="url(#{sg})" '
-                 f'stroke-width="7" stroke-linecap="round" '
-                 f'stroke-linejoin="round" stroke-dasharray="30 22">'
+                 f'stroke-width="6.4" stroke-linecap="round" '
+                 f'stroke-linejoin="round" stroke-dasharray="26 18">'
                  f'<animate attributeName="stroke-dashoffset" '
-                 f'values="0;-104" dur="2.6s" repeatCount="indefinite"/>'
+                 f'values="0;-88" dur="2.6s" repeatCount="indefinite"/>'
                  f'</path>')
         # tail fade dot
         body += (f'<circle cx="{pts[0][0]:.1f}" cy="{pts[0][1]:.1f}" r="4" '
                  f'fill="{AQUA}" opacity="0.85"/>')
-        # head follows the path
+        # head follows the path (gold-white comet)
         hb = uid('hb')
         defs += (f'<radialGradient id="{hb}" cx="0.5" cy="0.5" r="0.5">'
                  f'<stop offset="0" stop-color="#FFFFFF" '
                  f'stop-opacity="0.95"/>'
-                 f'<stop offset="0.4" stop-color="{EMERALD}" '
-                 f'stop-opacity="0.55"/>'
-                 f'<stop offset="1" stop-color="{EMERALD}" '
+                 f'<stop offset="0.4" stop-color="{GOLD}" '
+                 f'stop-opacity="0.6"/>'
+                 f'<stop offset="1" stop-color="{GOLD}" '
                  f'stop-opacity="0"/></radialGradient>')
         dur = max(6.0, len(pts) * 0.42)
         body += (f'<circle r="{CS * 0.78:.1f}" fill="url(#{hb})">'
@@ -304,28 +309,28 @@ def render(total, days, date_str):
             seen[m] = col
     for m, col in sorted(seen.items(), key=lambda kv: kv[1]):
         x = GX + col * PITCH + CS / 2
-        if x < 95 or x > 1075:
+        if x < 80 or x > 950:
             continue
-        body += T(x, 272, months[int(m) - 1], fs=9.5, fill=FAINT,
+        body += T(x, 268, months[int(m) - 1], fs=10.5, fill=FAINT,
                   anchor='middle', font=MONO, w=600)
 
     # ---- stat chips ----
     busiest = max((d['contributionCount'] for d in days), default=0)
     stats = [('TOTAL ', total, CYAN), ('ACTIVE DAYS ', len(active), AQUA),
-             ('BUSIEST DAY ', busiest, AMBER),
+             ('BUSIEST DAY ', busiest, GOLD),
              ('LONGEST STREAK ', longest, PINK)]
-    x = 74
+    x = 54
     for lab, val, c in stats:
-        defs, m, wd = chip(defs, x, 296, lab, val, c)
+        defs, m, wd = chip(defs, x, 302, lab, val, c)
         body += m
         x += wd + 12
-    body += T(1112, 304, 'SELF-HOSTED · AURORA AUTOPILOT', fs=11, fill=FAINT,
+    body += T(958, 316, 'SELF-HOSTED · SPACE AUTOPILOT', fs=12, fill=FAINT,
               anchor='end', font=MONO, w=700, ls=1.2)
 
     doc = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-           f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="372" '
-           f'viewBox="0 0 {W} 372" role="img">'
-           f'<title>3D contribution snake — live data</title>'
+           f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
+           f'viewBox="0 0 {W} {H}" role="img">'
+           f'<title>Contribution constellation — live data</title>'
            f'<defs>{defs}</defs>{body}</svg>\n')
     return doc
 

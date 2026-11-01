@@ -1,103 +1,104 @@
 <!-- ============================================================
-     HUSEYIN BERK BALCI — GitHub Profile · Aurora 3D Edition
-     100% native SVG (isometric cubes, SMIL animations, glass panels).
-     No JS, no iframes — safe for GitHub's image proxy (camo).
+     HUSEYIN BERK BALCI — GitHub Profile · Space 3D Edition
+     Deep-space theme: supermassive black hole, nebulae, ringed
+     planets, constellations. 100% native SVG + SMIL — camo safe.
+     Canvas 1012px = GitHub render width → text reads 1:1, no zoom.
      Self-hosted live telemetry: .github/scripts/live_stats.py
      Kurulum: SETUP.md  ·  Yerel önizleme: preview.html
      ============================================================ -->
 
 <p align="center">
-  <img src="assets/hero_3d.svg" width="100%" alt="Hüseyin Berk Balcı — Aurora 3D hero banner with floating isometric cubes and a ringed planet" />
+  <img src="assets/hero_3d.svg" width="100%" alt="Hüseyin Berk Balcı — Space 3D hero banner with a supermassive black hole, ringed planets and a star field" />
 </p>
 
 <div align="center">
-  <a href="https://www.berk.contact/"><img src="https://img.shields.io/badge/Portfolio-berk.contact-7C5CFF?style=for-the-badge&logo=globe&logoColor=white" alt="Portfolio — berk.contact" /></a>
-  <a href="https://takeoffturk.com"><img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF5E3B?style=for-the-badge&logo=airplane&logoColor=white" alt="Take Off Türk" /></a>
-  <a href="https://kocyatcilikinsaat.com"><img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Fat-34D399?style=for-the-badge&logo=building&logoColor=white" alt="Koç Yatçılık İnşaat" /></a>
+  <a href="https://www.berk.contact/"><img src="https://img.shields.io/badge/Portfolio-berk.contact-8B5CF6?style=for-the-badge&logo=globe&logoColor=white" alt="Portfolio — berk.contact" /></a>
+  <a href="https://takeoffturk.com"><img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FB923C?style=for-the-badge&logo=airplane&logoColor=white" alt="Take Off Türk" /></a>
+  <a href="https://kocyatcilikinsaat.com"><img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Fat-2DD4BF?style=for-the-badge&logo=building&logoColor=white" alt="Koç Yatçılık İnşaat" /></a>
   <br>
-  <a href="https://github.com/BrK08?tab=repositories"><img src="https://img.shields.io/badge/Repositories-BrK08-38BDF8?style=for-the-badge&logo=github&logoColor=white" alt="Repositories" /></a>
-  <img src="https://komarev.com/ghpvc/?username=BrK08&color=7C5CFF&style=for-the-badge&label=Profile+Views" alt="Profile views" />
+  <a href="https://github.com/BrK08?tab=repositories"><img src="https://img.shields.io/badge/Repositories-BrK08-22D3EE?style=for-the-badge&logo=github&logoColor=white" alt="Repositories" /></a>
+  <img src="https://komarev.com/ghpvc/?username=BrK08&color=8B5CF6&style=for-the-badge&label=Profile+Views" alt="Profile views" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=800&color=8B9CFF&center=true&vCenter=true&width=760&lines=Full-Stack+Developer;Systems+Engineer;IT+Administrator;Aviation+Tech+Builder;YKS+Preparation" alt="Typing banner" width="760" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=800&color=22D3EE&center=true&vCenter=true&width=820&lines=Full-Stack+Developer;Systems+Engineer;IT+Administrator;Aviation+Tech+Builder;YKS+Preparation" alt="Typing banner" width="820" />
 </div>
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
-<img src="assets/about_terminal_3d.svg" width="100%" alt="About me — animated terminal card" />
+<img src="assets/about_terminal_3d.svg" width="100%" alt="About me — deep-space mission control terminal" />
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_tech.svg" width="100%" alt="Section — Tech Arsenal" />
 
 <img src="assets/tech_3d.svg" width="100%" alt="Tech Arsenal — floating 3D cubes for 8 languages plus three tooling panels" />
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_stats.svg" width="100%" alt="Section — GitHub Stats" />
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=BrK08&hide_border=true&background=0B1026&stroke=2A3A6E&ring=7C5CFF&fire=38BDF8&currStreakNum=A5B4FF&currStreakLabel=A5B4FF&sideNums=A5B4FF&sideLabels=C0CBEA&dates=C0CBEA&border_radius=12" alt="GitHub streak stats in aurora colors" width="720" />
+  <img src="https://streak-stats.demolab.com?user=BrK08&hide_border=true&background=070318&stroke=2E2A66&ring=8B5CF6&fire=FBBF24&currStreakNum=B8C4FF&currStreakLabel=B8C4FF&sideNums=B8C4FF&sideLabels=9FB0D9&dates=9FB0D9&border_radius=12" alt="GitHub streak stats in deep-space colors" width="760" />
 </div>
 
 <img src="assets/stats_by_numbers_3d.svg" width="100%" alt="By the numbers — 17 years old, 3 live websites, 8+ languages, TEKNOFEST 2026" />
 
-<img src="assets/live_stats_3d.svg" width="100%" alt="Live GitHub telemetry — repos, followers, stars, commits and top languages regenerated daily by Aurora Autopilot" />
+<img src="assets/live_stats_3d.svg" width="100%" alt="Live deep-space telemetry — repos, followers, stars, commits and top languages regenerated daily by Space Autopilot" />
 
-<p align="center"><sub>⚡ <b>Self-hosted telemetry</b> — this panel is regenerated by the profile's own <b>Aurora Autopilot</b> workflow from the live GitHub API. No third-party widget service, no downtime: real numbers, rendered as 3D SVG, every day at 02:00 UTC.</sub></p>
+<p align="center"><sub>⚡ <b>Self-hosted telemetry</b> — this panel is regenerated by the profile's own <b>Space Autopilot</b> workflow from the live GitHub API. No third-party widget service, no downtime: real numbers, rendered as 3D SVG, every day at 02:00 UTC.</sub></p>
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_trophies.svg" width="100%" alt="Section — Trophy Cabinet" />
 
 <img src="assets/trophies_3d.svg" width="100%" alt="Trophy cabinet — floating 3D trophies: Take Off Türk, TEKNOFEST 2026 OYSA, Treysan IT internship, 17 and shipping" />
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
-<img src="assets/section_snake.svg" width="100%" alt="Section — 3D Contribution Snake" />
+<img src="assets/section_snake.svg" width="100%" alt="Section — Contribution Constellation" />
 
-<img src="assets/snake.svg" width="100%" alt="Animated contribution snake, regenerated daily by GitHub Actions" />
+<img src="assets/snake.svg" width="100%" alt="Contribution constellation — animated contribution snake, regenerated daily by GitHub Actions" />
 
-<p align="center"><sub>⚡ Auto-generated from live contribution data — rebuilt every day by the <b>Aurora Autopilot</b> workflow.</sub></p>
+<p align="center"><sub>⚡ Auto-generated from live contribution data — rebuilt every day by the <b>Space Autopilot</b> workflow.</sub></p>
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_projects.svg" width="100%" alt="Section — Featured Projects" />
 
 <img src="assets/projects_a_3d.svg" width="100%" alt="Featured projects — Take Off Turk and Koç Yatçılık İnşaat" />
 
 <div align="center">
-  <a href="https://takeoffturk.com"><img src="https://img.shields.io/badge/Website-takeoffturk.com-FF5E3B?style=flat-square&logo=airplane&logoColor=white" alt="takeoffturk.com" /></a>
-  <a href="https://kocyatcilikinsaat.com"><img src="https://img.shields.io/badge/Website-kocyatcilikinsaat.com-34D399?style=flat-square&logo=building&logoColor=white" alt="kocyatcilikinsaat.com" /></a>
+  <a href="https://takeoffturk.com"><img src="https://img.shields.io/badge/Website-takeoffturk.com-FB923C?style=flat-square&logo=airplane&logoColor=white" alt="takeoffturk.com" /></a>
+  <a href="https://kocyatcilikinsaat.com"><img src="https://img.shields.io/badge/Website-kocyatcilikinsaat.com-2DD4BF?style=flat-square&logo=building&logoColor=white" alt="kocyatcilikinsaat.com" /></a>
 </div>
 
 <img src="assets/projects_b_3d.svg" width="100%" alt="Featured projects — OYSA autonomous fire vehicle and Treysan IT internship" />
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_timeline.svg" width="100%" alt="Section — Experience Timeline" />
 
-<img src="assets/timeline_3d.svg" width="100%" alt="Experience timeline — Take Off Turk, Koç Yatçılık İnşaat, Treysan, OYSA" />
+<img src="assets/timeline_3d.svg" width="100%" alt="Experience flight log — Take Off Turk, Koç Yatçılık İnşaat, Treysan, OYSA" />
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_focus.svg" width="100%" alt="Section — Current Focus" />
 
 <img src="assets/focus_3d.svg" width="100%" alt="Current focus — YKS preparation, TEKNOFEST 2026 OYSA, Take Off Turk growth, systems engineering" />
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
 <img src="assets/section_connect.svg" width="100%" alt="Section — Connect With Me" />
 
 <div align="center">
-  <a href="https://www.berk.contact/"><img src="https://img.shields.io/badge/Portfolio-berk.contact-7C5CFF?style=for-the-badge&logo=globe&logoColor=white" alt="Portfolio — berk.contact" /></a>
-  <a href="https://takeoffturk.com"><img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FF5E3B?style=for-the-badge&logo=airplane&logoColor=white" alt="Take Off Türk" /></a>
-  <a href="https://kocyatcilikinsaat.com"><img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Fat-34D399?style=for-the-badge&logo=building&logoColor=white" alt="Koç Yatçılık İnşaat" /></a>
+  <a href="https://www.berk.contact/"><img src="https://img.shields.io/badge/Portfolio-berk.contact-8B5CF6?style=for-the-badge&logo=globe&logoColor=white" alt="Portfolio — berk.contact" /></a>
+  <a href="https://takeoffturk.com"><img src="https://img.shields.io/badge/Take%20Off%20T%C3%BCrk-FB923C?style=for-the-badge&logo=airplane&logoColor=white" alt="Take Off Türk" /></a>
+  <a href="https://kocyatcilikinsaat.com"><img src="https://img.shields.io/badge/Ko%C3%A7%20Yat%C3%A7%C4%B1l%C4%B1k%20%C4%B0n%C5%9Fat-2DD4BF?style=for-the-badge&logo=building&logoColor=white" alt="Koç Yatçılık İnşaat" /></a>
   <br><br>
-  <img src="https://komarev.com/ghpvc/?username=BrK08&color=7C5CFF&style=for-the-badge&label=Profile+Views" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=BrK08&color=8B5CF6&style=for-the-badge&label=Profile+Views" alt="Profile views" />
 </div>
 
-<img src="assets/divider_3d.svg" width="100%" alt="Aurora divider" />
+<img src="assets/divider_3d.svg" width="100%" alt="Space divider" />
 
-<img src="assets/footer_3d.svg" width="100%" alt="Thanks for visiting — Peter Drucker quote footer" />
+<img src="assets/footer_3d.svg" width="100%" alt="Thanks for visiting — Peter Drucker quote footer with a small black hole" />
