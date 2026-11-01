@@ -1,9 +1,11 @@
 name: Aurora Autopilot
 
-# Daily regeneration for the profile's live 3D assets:
-#   1. assets/snake.svg        — contribution snake (Platane/snk)
-#   2. assets/live_stats_3d.svg — self-hosted telemetry panel rendered by
-#      .github/scripts/live_stats.py from the real GitHub API
+# Daily regeneration for the profile's live 3D assets — 100% self-hosted:
+#   1. assets/snake.svg         — 3D contribution snake rendered by
+#      .github/scripts/gen_snake.py from the real GitHub GraphQL API
+#   2. assets/live_stats_3d.svg — telemetry panel rendered by
+#      .github/scripts/live_stats.py from the real GitHub REST API
+# No third-party widget service, no third-party action.
 # Runs at 02:00 UTC (05:00 Istanbul) and on demand.
 
 on:
@@ -27,11 +29,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate 3D contribution snake
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            assets/snake.svg?color_snake=7C5CFF&color_dots=1B2547,2A3A6E,3D5AA8,4F7CFF,7C5CFF&dark_mode=true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+        run: python3 .github/scripts/gen_snake.py assets/snake.svg
 
       - name: Render live telemetry panel
         env:

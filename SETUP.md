@@ -16,6 +16,7 @@ Bu rehberi izleyerek **5 dakikada** yayına alabilirsin.
 | `assets/live_stats_3d.svg` | Canlı telemetri paneli (repo, follower, yıldız, commit sayıları + dil grafiği). İlk kurulumda "boot" çerçevesi görünür; Aurora Autopilot çalışınca gerçek verilerle yeniden çizilir |
 | `assets/trophies_3d.svg` | 3D kupa dolabı — Take Off Türk, TEKNOFEST 2026, Treysan, "17 & Shipping" |
 | `.github/workflows/aurora-autopilot.yml` | Her gün yılanı VE telemetri panelini otomatik yenileyen GitHub Action |
+| `.github/scripts/gen_snake.py` | 3D katkı yılanını GitHub GraphQL API'den aldığı **gerçek** verilerle çizen betik (saf Python, ek kurulum gerekmez) |
 | `.github/scripts/live_stats.py` | Telemetri panelini GitHub API'den aldığı **gerçek** verilerle çizen betik (saf Python, ek kurulum gerekmez) |
 | `preview.html` | Push etmeden önce yerelde GitHub görünümünü test etmeni sağlar |
 | `SETUP.md` | Bu rehber (repoya yüklemek zorunda değilsin) |
@@ -77,7 +78,8 @@ Bitti! → **github.com/BrK08** sayfanı yenile. 🎉
 ## 🔄 Aurora Autopilot Nasıl Çalışır?
 
 - Workflow **her gün 05:00 Türkiye saati** (02:00 UTC) otomatik çalışır:
-  1. **Platane/snk** aksiyonu `assets/snake.svg` dosyasını son katkı grafiğinle yeniden üretir.
+  1. `.github/scripts/gen_snake.py` betiği GitHub GraphQL API'den **gerçek** katkı
+     takvimini çeker ve `assets/snake.svg` dosyasını Aurora stilinde yeniden üretir.
   2. `.github/scripts/live_stats.py` betiği GitHub API'den **gerçek** verileri çeker
      (repo sayısı, follower, yıldız, son 12 ayın commit sayısı, dil dağılımı) ve
      `assets/live_stats_3d.svg` panelini Aurora stilinde yeniden çizer.
@@ -89,10 +91,11 @@ Bitti! → **github.com/BrK08** sayfanı yenile. 🎉
   **ekstra bir secret tanımlamana gerek yok**.
 
 ### 💡 Neden bu yaklaşım "ilk" seviyede?
-Popüler istatistik kartları (github-readme-stats, trophy, activity graph) ücretsiz
-topluluk servisleridir ve sık sık **çöker veya kapanır** — o zaman profilinde kırık
-resimler kalır. Bu pakette telemetri **tamamen kendi reponda**, kendi workflow'unda
-üretilir: dış servisler kapalı olsa bile panelin **her gün** çalışır ve asla kırılmaz.
+Popüler istatistik kartları (github-readme-stats, trophy, activity graph) ve
+yılan görselleri genelde **üçüncü parti servis/aksiyonlara** bağımlıdır ve sık sık
+**çöker veya kapanır** — o zaman profilinde kırık resimler kalır. Bu pakette yılan
+VE telemetri **tamamen kendi reponun içinde** üretilir: dış servisler kapalı olsa
+bile panelin **her gün** çalışır ve asla kırılmaz.
 
 ---
 
@@ -102,9 +105,12 @@ resimler kalır. Bu pakette telemetri **tamamen kendi reponda**, kendi workflow'
 → Dosya yolları `assets/....svg` şeklinde relative olmalı, repon adı kullanıcı
 adınla birebir aynı olmalı (`BrK08/BrK08`) ve repo **public** olmalı.
 
-**Telemetri panelinde "..." gözlüyor, sayılar ne zaman gelir?**
-→ Bu "boot frame" kasıtlıdır: ilk **Aurora Autopilot** çalışmasında gerçek
-sayılarla değişir. Actions'ı bir kez elle çalıştırman yeterli (yukarıdaki adım 5).
+**Yılan veya telemetri sayıları neden güncellenmiyor?**
+→ Panel ve yılan, workflow her çalıştığında yeniden çizilir. Elle güncellemek
+için: **Actions → Aurora Autopilot → Run workflow**. Actions hiç çalışmıyorsa
+GitHub hesabında **faturalandırma kilidi** olabilir (ödeme sorunu Actions'ı da
+kilitler): **Settings → Billing and plans**'ten ödeme yöntemini kontrol et.
+Ayrıca repoda Actions'ın açık olduğundan emin ol.
 
 **Animasyonlar neden GitHub'da çalışıyor?**
 → Tüm animasyonlar SVG'nin yerleşik standardı olan **SMIL** ile yapıldı
