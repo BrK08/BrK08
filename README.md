@@ -1,34 +1,38 @@
 <p align="center">
-  <a href="https://www.berk.contact/">www.berk.contact</a>
+  <img src="assets/berk-profile.svg" width="100%" alt="Hüseyin Berk Balcı — yazılım geliştirici ve sistem mühendisi" />
 </p>
-
-<h1 align="center">Hüseyin Berk Balcı</h1>
-
-<p align="center">Yazılım geliştiriyorum; fikirleri çalışan ürünlere ve sistemlere dönüştürüyorum.</p>
 
 <p align="center">
-  <a href="https://www.berk.contact/">Website</a> ·
-  <a href="https://github.com/BrK08?tab=repositories">GitHub</a> ·
-  <a href="mailto:hello@berk.contact">E-posta</a>
+  <a href="https://www.berk.contact">Website</a> &nbsp;·&nbsp;
+  <a href="https://github.com/BrK08?tab=repositories">Projeler</a> &nbsp;·&nbsp;
+  <a href="https://takeoffturk.com">Take Off Türk</a> &nbsp;·&nbsp;
+  <a href="https://kocyatcilikinsaat.com">Koç Yatçılık İnşaat</a>
 </p>
 
----
+## Merhaba, ben Berk.
 
-### Seçili işler
+Yazılım geliştirici, sistem mühendisi ve IT yöneticisiyim. Web projeleri geliştiriyor; yazılım, donanım ve operasyon taraflarının birlikte çalıştığı sistemlerle ilgileniyorum. Farklı diller ve araçlarla fikirleri kullanılabilir ürünlere dönüştürüyorum.
 
-**[Take Off Türk](https://takeoffturk.com)**  
-Havacılık ve teknoloji odağında bir platform.
+## Üzerinde çalıştıklarım
 
-**[Koç Yatçılık İnşaat](https://kocyatcilikinsaat.com)**  
-Kurumsal web projesi.
+- **[Take Off Türk](https://takeoffturk.com)** — havacılık ve teknoloji odağındaki platform; ürünün geliştirilmesi ve büyütülmesi.
+- **[Koç Yatçılık İnşaat](https://kocyatcilikinsaat.com)** — kurumsal web projesi.
+- **OYSA · TEKNOFEST 2026** — otonom yangın müdahale aracı geliştiren ekip projesi.
 
-**OYSA · TEKNOFEST 2026**  
-Otonom yangın müdahale aracı üzerine ekip projesi.
+## Deneyim & başarılar
 
-### Şu sıralar
+- **Treysan** — IT stajı.
+- **TEKNOFEST 2026 OYSA** — otonom sistemler ve yangın müdahale aracı üzerine ekip çalışması.
+- Gerçek kullanıcılar için yayınlanmış ve sürdürülen web projeleri.
 
-YKS'ye hazırlanıyor, OYSA üzerinde çalışıyor ve Take Off Türk'ü geliştiriyorum.
+## Şu an
 
----
+YKS'ye hazırlanıyor, OYSA projesinde çalışıyor ve Take Off Türk'ü geliştirmeye devam ediyorum. Ayrıca sistem mühendisliği ve IT operasyonları alanlarında kendimi geliştiriyorum.
 
-Daha fazlası: **[berk.contact](https://www.berk.contact/)**
+## İlgi alanlarım
+
+`Full-stack development` · `Systems engineering` · `IT administration` · `Automation` · `Product building`
+
+<p align="center">
+  <a href="https://www.berk.contact"><strong>berk.contact ↗</strong></a>
+</p>
